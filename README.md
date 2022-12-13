@@ -5,7 +5,7 @@
 *Programming it's not a language, it's envirounment*
 
 
-##To start C#
+## To start C#
 
 - OS: MS Windows 7
 
@@ -19,3 +19,4 @@
 
 1. *dotnet new console* - make a new console project in the directory
 2. *dotnet run* - run application
+3. *dotnet new gitignore --force* - make .gitignore file for C# projects repo
