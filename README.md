@@ -9,11 +9,14 @@
 
 - OS: MS Windows 7
 
-- dotnet: dotnet-sdk-7.0.100-win-x64.exe (need restart computer)
+- dotnet: dotnet-sdk-6.0.404-win-x64.exe (need restart computer)
 
 - IDE: VSCodeSetup-x64-1.70.2.exe
 	+ package C# for Visual Studio Code (powered by OmniSharp)
 	+ package C# IDE Extensions for VSCode
+
+	https://metanit.com/sharp/tutorial/
+
 
 ## Commands
 
