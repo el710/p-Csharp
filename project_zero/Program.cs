@@ -49,3 +49,17 @@ if(bool_var){
 else {
     Console.WriteLine($"How are you {userName}");
 }
+
+// cycle
+int count = 10;
+Console.Clear();
+
+while(count > 0){
+
+    int x = new Random().Next(0,10);
+    int y = new Random().Next(0,10);
+    
+    Console.SetCursorPosition(x, y);
+    Console.Write("*");
+    count--;
+}
