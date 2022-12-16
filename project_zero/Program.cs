@@ -7,6 +7,7 @@ double real_num_var = 100.5;
 string text_var = "C Sharp World ";
 
 // output
+Console.Clear();
 Console.Write(text_var);
 Console.WriteLine(" man...");
 Console.WriteLine($"{int_num_var} ... {real_num_var}");
@@ -37,7 +38,7 @@ Console.WriteLine($"random number: {int_num_var}");
 // if
 bool_var = false;
 Console.Write("Sign in: ");
-string userName = Console.ReadLine();
+string userName = Console.ReadLine() ?? "";
 
 if(userName.ToLower() == "masha") bool_var = true;
 else bool_var = false;
