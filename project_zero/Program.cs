@@ -6,6 +6,13 @@ int int_num_var = 100;
 double real_num_var = 100.5;
 string text_var = "C Sharp World ";
 
+// array
+int[] array1 = {1, 2, 3};
+// int[] array2 = new int[5];
+// int[] array3 = new int[]{1, 2, 3, 4, 5};
+// int[] array4 = new int[5]{1, 2, 3, 4, 5};
+
+
 // output
 Console.Clear();
 Console.Write(text_var);
@@ -63,3 +70,14 @@ while(count > 0){
     Console.Write("*");
     count--;
 }
+
+// method
+int find_max(int x, int y, int z){
+    int res = x;
+    
+    if(y > res) res = y;
+    if(z > res) res = z;
+    return res;
+}
+
+Console.WriteLine($"Max of 1, 2, 3 is {find_max(array1[0],array1[1],array1[2])}");
