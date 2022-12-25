@@ -23,3 +23,8 @@
 1. *dotnet new console* - make a new console project in the directory
 2. *dotnet run* - run application
 3. *dotnet new gitignore --force* - make .gitignore file for C# projects repo
+
+
+## VS code
+
+Shift+Alt+F - formatting text
