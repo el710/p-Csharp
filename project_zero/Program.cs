@@ -30,21 +30,31 @@ string user_text = Console.ReadLine() ?? ""; // чтение с проверко
 Console.WriteLine($"Your input is {user_text}");
 Console.WriteLine("press enter when ready..."); Console.ReadLine();
 
-
+//=============================================
 // transforamtion
 Console.Clear();
+
 Console.WriteLine(">trans examples...");
-Console.Write("input number in console: ");
+Console.Write("input number in console (honestly): ");
 user_text = Console.ReadLine() ?? "";
 real_num_var = double.Parse(user_text); // string to number
 int_num_var = (int)real_num_var;  // real type to integer type
 Console.WriteLine($"Your input is {int_num_var}");
 
-Console.Write("input number again: ");
+Console.Write("input number again (for Convert...): ");
 int_num_var = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"Your input is {int_num_var}");
+
 Console.WriteLine("press enter when ready..."); Console.ReadLine();
 
+Console.Clear();
+
+text_var = $"{int_num_var}";
+Console.WriteLine($"Integer variable int_num_var = {int_num_var} became a string = {text_var}");
+
+Console.WriteLine("press enter when ready..."); Console.ReadLine();
+
+//==============================================
 // Math: + - * / % ...
 Console.Clear();
 Console.WriteLine(">Math examples...");
@@ -62,6 +72,7 @@ int_num_var = new Random().Next(10,20); // random number in [10...19]
 Console.WriteLine($"random number: {int_num_var}");
 Console.WriteLine("press enter when ready..."); Console.ReadLine();
 
+//=============================================
 // if
 bool_var = false;
 Console.Write("Sign in (masha?): ");
@@ -78,7 +89,7 @@ else {
 }
 Console.WriteLine("press enter when ready..."); Console.ReadLine();
 
-
+//==============================================
 // cycle
 int count = 10;
 Console.Clear();
@@ -94,7 +105,7 @@ while(count > 0){
 }
 Console.WriteLine("press enter when ready..."); Console.ReadLine();
 
-
+//============================================
 // methods
 Console.Clear();
 Console.WriteLine("Using of methods...");
@@ -121,6 +132,7 @@ void init(ref int x, ref int y){
 Console.WriteLine("Press enter for continue..."); Console.ReadLine();
 
 
+//==============================================
 // try...catch
 Console.Clear();
 Console.WriteLine(">try catch example...");
@@ -129,5 +141,5 @@ try{
     int_num_var = Convert.ToInt32(Console.ReadLine());
 }
 catch(Exception exc){
-        Console.WriteLine($"Error input {exc.Message}");
+        Console.WriteLine($"Error input: {exc.Message}");
 }
