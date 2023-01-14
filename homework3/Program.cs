@@ -13,7 +13,7 @@ if( !GetUserIntNumber(ref taskNumber, "input task number ")){
 
 
 if(taskNumber == 19){
-    Console.WriteLine($"You choose task {taskNumber}");
+    Console.WriteLine($"You choose task {taskNumber}: Recognizing palindrom in number ");
 
     if(! GetUserIntNumber(ref userNumber,"input 5-digit number ")) return;
     if(userNumber < 10000 && userNumber > 99999){
@@ -38,7 +38,7 @@ if(taskNumber == 19){
     }
 }
 else if(taskNumber == 21){
-    Console.WriteLine($"You choose task {taskNumber}");
+    Console.WriteLine($"You choose task {taskNumber} Get distance between two 3d points");
 
     int x1=0, y1=0, z1=0, x2=0, y2=0, z2=0;
 
@@ -55,7 +55,7 @@ else if(taskNumber == 21){
 
 }
 else if(taskNumber == 23){
-    Console.WriteLine($"You choose task {taskNumber}");
+    Console.WriteLine($"You choose task {taskNumber} Make table of power3 for 1 to N numbers");
 
     int lim=0;
     
