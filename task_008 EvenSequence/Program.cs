@@ -6,7 +6,7 @@ int int_num, item = 1;
 
 Console.Clear();
 
-Console.WriteLine("Задача 8: show even nubers from 1 to user's number");
+Console.WriteLine("Задача 8: show even numbers from 1 to user's number");
 Console.Write("Введите произвольное целое число: ");
 
 number1 = Console.ReadLine() ?? "";

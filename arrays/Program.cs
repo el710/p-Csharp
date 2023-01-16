@@ -36,19 +36,26 @@ Console.WriteLine("press enter when ready..."); Console.ReadLine();
 
 //==================== implemantation
 
-void PrintArray(int[] set){
+void PrintArray(int[] set, int columns){
 
     int size = set.Length;
     int index = 0;
+     
+    int row = 0;
+    int cols;
 
     while( index < size){
-        if(index % 20 == 0 && index != 0) Console.WriteLine($"{set[index]} ");
-        else Console.Write($"{set[index]} ");
-        
-        index++;
-    }
-    Console.WriteLine("");
+        if((size-index) > columns ) cols = columns;
+        else cols = size - index;
 
+        for(int j = 0; j < cols; j++){
+            Console.SetCursorPosition(7+(j*5), 1+row);
+            Console.Write($"{set[index]} ");
+            index++;
+        }    
+        row++;               
+    }
+    Console.WriteLine();
 }
 
 void InitArray(int[] set, int rand){

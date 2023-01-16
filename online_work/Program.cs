@@ -31,7 +31,7 @@ void InitArray(ref int [] array){
 
 //============== implementation of methods
 
-//---------- get integer user's number 
+//---------- get integer 'result' number defined by 'query'
 // EX:  if(! GetUserIntNumber(ref lim,"input integer number ")) return;
 
 bool GetUserIntNumber(ref int result, string query){
@@ -58,6 +58,9 @@ bool GetUserIntNumber(ref int result, string query){
 
     return false;
 } 
+
+//---------------------- get number with 'length' digits
+// EX:  int number = GetNumber(3);
 
 int GetNumber(int length){
 

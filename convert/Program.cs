@@ -4,7 +4,7 @@
 double doubleVar;
 string stringVar;
 int intVar;
-
+char symbol;
 
 Console.Clear();
 
@@ -24,6 +24,11 @@ Console.WriteLine($"Convert text to integer number: {intVar}");
 
 stringVar = $"{intVar}";
 Console.WriteLine($"Convert integer to text: {intVar} became a string {stringVar}");
+
+symbol = '!';
+stringVar += $"{symbol}";
+Console.WriteLine($"Plus char: {symbol} - {stringVar}");
+
 
 stringVar = "dsfdsd"; 
 stringVar = stringVar.ToUpper();
