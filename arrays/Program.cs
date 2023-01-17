@@ -19,7 +19,7 @@ int lost, result;
 // initialisation of array
 InitArray(array, _randomSize);
 // show array
-PrintArray(array);
+PrintArray(array, 20);
 
 //================================================
 // 1. find the random element "lost"
@@ -55,15 +55,14 @@ void PrintArray(int[] set, int columns){
         }    
         row++;               
     }
-    Console.WriteLine();
+    Console.WriteLine("");
 }
 
 void InitArray(int[] set, int rand){
 
-    int size = set.Length;
     int index = 0;
 
-    while( index < size){
+    while( index < set.Length){
         set[index] = new Random().Next(0, rand);
         index++;
     }

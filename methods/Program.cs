@@ -21,6 +21,12 @@ init(ref intVar, ref count); // give referances if variables - method can change
 Console.WriteLine($"var & count become {intVar} - {count}");
 
 
+int a = 5, b = 0;
+BackParam(a, out b);
+Console.WriteLine($"Method return parameter {b}");
+
+
+
 Console.WriteLine("Press enter for continue..."); Console.ReadLine();
 
 
@@ -57,5 +63,7 @@ void init(ref int x, ref int y){
     y=5;
 }
 
-
+void BackParam(int intIn, out int intOut){
+    intOut = intIn;
+}
 
