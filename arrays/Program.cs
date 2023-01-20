@@ -2,39 +2,63 @@
 
 Console.WriteLine("There are examples with arrays");
 
-//defines array
+//=========== defines array
 // int[] array1 = {1, 2, 3};
 // int[] array2 = new int[5];
 // int[] array3 = new int[]{1, 2, 3, 4, 5};
 // int[] array4 = new int[5]{1, 2, 3, 4, 5};
 
+// int[,] array2D = new int[5, 5]
 
 
+
+// -------------- multi dimension arrays
+int[,] matrix = new int[3, 4]; 
+
+Console.Clear();
+Console.WriteLine("2D array - matrix");
+FillMatrix(matrix);
+ShowMatrix(matrix);
+
+
+/**/
+void FillMatrix(int[,] matr){
+    for(int i = 0; i < matr.GetLength(0); i++){
+        for(int j = 0; j < matr.GetLength(1); j++){
+            matr[i, j] = new Random().Next(1, 10);
+        }
+    }
+}
+
+void ShowMatrix(int[,] matr){
+    for(int i = 0; i < matr.GetLength(0); i++){
+        for(int j = 0; j < matr.GetLength(1); j++){
+            Console.Write($"{matr[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+/*/---------------  initialisation and show array
 const int _arraySize = 100;
 const int _randomSize = 100;
 
 int[] array = new int[_arraySize];
 int lost, result;
 
-// initialisation of array
 InitArray(array, _randomSize);
-// show array
-//Console.WriteLine(String.Join(" ",array));
-//Console.ReadLine();
+Console.WriteLine(String.Join(" ",array));
+Console.WriteLine();
 PrintArray(array, 20);
 
-//================================================
-// 1. find the random element "lost"
+//=========== find the random element "lost"
 lost = new Random().Next(0, _randomSize);
-
 result = IndexOf(array, lost);
-
 if(result != -1) Console.WriteLine($"We find {lost} in array[{result}] ");
 else Console.WriteLine($"There is no {lost} in array ");
-
-
 Console.WriteLine("press enter when ready..."); Console.ReadLine();
-
+/**/
 
 //==================== implementation
 
