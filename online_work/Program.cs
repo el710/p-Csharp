@@ -15,7 +15,7 @@ Console.WriteLine("Task 44:  done");
 int ShowFibonachi(int number){
 
     if(number <= 0 ) return 0;
-    int[] Fibonachi = new int[userNumber];
+    int[] Fibonachi = new int[number];
     int item = 0;
     
     Console.Write("Fibonachi line: ");
@@ -65,9 +65,6 @@ string IntToStrBin(int number){
     }
     return result;
 }
->>>>>>> abdbfb6c515b23c5100ac526ef6acc3ffc7c8ead
-
-
 
 
 /*/----------------- task 40: 

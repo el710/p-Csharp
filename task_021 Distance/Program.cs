@@ -1,5 +1,4 @@
-﻿int userNumber = 0;
-
+﻿
 Console.Clear();
 Console.WriteLine("Task 19: Find distance between two 3d points");
 

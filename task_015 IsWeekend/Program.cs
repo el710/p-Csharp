@@ -1,5 +1,5 @@
 ﻿
-int number, answer;
+int number;
 
 Console.Clear();
 Console.WriteLine("Задача 15: define weekend or workday by user's number in [1 ..7]");
