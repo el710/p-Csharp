@@ -18,7 +18,7 @@
 	https://metanit.com/sharp/tutorial/
 
 
-## Commands
+## Terminal commands
 
 1. *dotnet new console* - make a new console project in the directory
 2. *dotnet run* - run application

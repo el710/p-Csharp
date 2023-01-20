@@ -19,6 +19,8 @@ int lost, result;
 // initialisation of array
 InitArray(array, _randomSize);
 // show array
+//Console.WriteLine(String.Join(" ",array));
+//Console.ReadLine();
 PrintArray(array, 20);
 
 //================================================
