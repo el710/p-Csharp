@@ -19,6 +19,8 @@ int lost, result;
 // initialisation of array
 InitArray(array, _randomSize);
 // show array
+//Console.WriteLine(String.Join(" ",array));
+//Console.ReadLine();
 PrintArray(array, 20);
 
 //================================================
@@ -34,7 +36,7 @@ else Console.WriteLine($"There is no {lost} in array ");
 Console.WriteLine("press enter when ready..."); Console.ReadLine();
 
 
-//==================== implemantation
+//==================== implementation
 
 void PrintArray(int[] set, int columns){
 

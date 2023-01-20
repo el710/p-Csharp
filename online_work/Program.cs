@@ -1,13 +1,109 @@
 ﻿
-//-------------------- task 40: check existing of triangle by user's sides lengths
+/*/---------------------- task 44: Show N Fibonachi line
+int userNumber = 0;
+
+Console.Clear();
+Console.WriteLine("Task 44:  Show user's length line Fibonachi");
+
+if(! GetUserIntNumber(ref userNumber,"input integer number ")) return;
+
+ShowFibonachi(userNumber);
+
+Console.WriteLine("Task 44:  done");
+
+/**/
+int ShowFibonachi(int number){
+
+    if(number <= 0 ) return 0;
+    int[] Fibonachi = new int[userNumber];
+    int item = 0;
+    
+    Console.Write("Fibonachi line: ");
+    while(item < number){
+        if(item == 0){ 
+            Fibonachi[item] = 0 ;    
+        }
+        else if(item == 1){
+            Fibonachi[item] = 1;
+        }
+        else {
+            Fibonachi[item] = Fibonachi[item-1] + Fibonachi[item-2];
+        }
+
+        Console.Write($"{Fibonachi[item]} ");
+        item++;
+    }
+    Console.WriteLine();
+    return 0;
+}
+
+
+
+/*/-------------------- task 42: Convert user's integer to binary
+int userNumber = 0;
+
+Console.Clear();
+Console.WriteLine("Task 42:  Convert user's integer to binary");
+
+if(! GetUserIntNumber(ref userNumber,"input integer number ")) return;
+
+Console.WriteLine($"{userNumber} in binary: {IntToStrBin(userNumber)}");
+Console.WriteLine("Task 42:  done");
+
+/**/
+string IntToStrBin(int number){
+
+    string result = String.Empty;
+
+    if(number == 0) return "0";
+    
+    while(number > 0){
+
+        result = (number % 2).ToString() + result;
+        number /= 2;
+
+    }
+    return result;
+}
+>>>>>>> abdbfb6c515b23c5100ac526ef6acc3ffc7c8ead
 
 
 
 
+/*/----------------- task 40: 
+int sideA = 0, sideB = 0, sideC = 0;
+int[] sides = new int[3];
+
+Console.Clear();
+Console.WriteLine("Task 40:  check triangle existing by users's sides");
+if(! GetUserIntNumber(ref sideA,"input length of A side ")) return;
+if(! GetUserIntNumber(ref sideB,"input length of B side ")) return;
+if(! GetUserIntNumber(ref sideC,"input length of C side ")) return;
+
+sides[0] = sideA;
+sides[1] = sideB;
+sides[2] = sideC;
+
+if(IsTriangle(sides)) Console.WriteLine($"{sideA} {sideB} {sideC} - are sides of triangle");
+else Console.WriteLine($"{sideA} {sideB} {sideC} - are not triangle");
+
+Console.WriteLine("Task 40:  done");
+
+/**/
+bool IsTriangle(int[] array){
+    if(array[0] < (array[1] + array[2])){
+        if(array[1] < (array[0] + array[2])){
+            if(array[2] < (array[0] + array[1])){
+                return true;
+
+            }else return false;    
+        }else return false;    
+    }else return false;
+}
 
 
 
-//----------------- task 30: initialisation of array by [0,1]
+/*/----------------- task 30: initialisation of array by [0,1]
 
 int[] mas = new int[8];
 Console.Clear();
