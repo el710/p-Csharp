@@ -1,4 +1,7 @@
 ﻿
+//-------------------- task 40: check existing of triangle by user's sides lengths
+
+
 
 
 
