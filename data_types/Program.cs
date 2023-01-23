@@ -9,6 +9,7 @@ bool boolVar = true; // or false
 char charVar = 'c';
 
 string stringVar = "abc";
+string mess = String.Empty; // null initialisation of string
 
 int intVar = 123;
 

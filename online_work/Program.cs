@@ -1,5 +1,5 @@
 ﻿
-/*/---------------------- task 44: Show N Fibonachi line
+//---------------------- task 44: Show N Fibonachi line
 int userNumber = 0;
 
 Console.Clear();
@@ -7,11 +7,21 @@ Console.WriteLine("Task 44:  Show user's length line Fibonachi");
 
 if(! GetUserIntNumber(ref userNumber,"input integer number ")) return;
 
-ShowFibonachi(userNumber);
+//ShowFibonachi(userNumber);
+
+for(int i = 1; i <= userNumber; i++)
+Console.Write($"{Fibonacci(i)} ");
+Console.WriteLine();
 
 Console.WriteLine("Task 44:  done");
 
 /**/
+int Fibonacci(int item){
+    if(item <= 2 ) return 1;
+    return Fibonacci(item - 1) + Fibonacci(item - 2);
+}
+
+
 int ShowFibonachi(int number){
 
     if(number <= 0 ) return 0;
