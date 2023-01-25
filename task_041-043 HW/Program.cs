@@ -11,7 +11,7 @@ double[] point = GetCrossPoint(line1, line2);
 if(point != null){
     Console.WriteLine($"Cross point (x, y): ({point[0]}, {point[1]})");
 }else {
-    Console.WriteLine($"These lines don't cross");
+    Console.WriteLine($"These lines aren't crossing ");
 }
 
 Console.WriteLine("Task 43: done. Press Enter to continue..."); Console.ReadLine();
@@ -69,7 +69,7 @@ bool GetUserDoubleNumber(ref double result, string query){
 } 
 
 
-/*/------------------------------------------
+//------------------------------------------
 Console.Clear();
 Console.WriteLine("HW task 41: control of user's numbers > 0 ");
 int length = 0;
