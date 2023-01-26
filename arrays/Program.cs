@@ -50,7 +50,7 @@ int lost, result;
 InitArray(array, _randomSize);
 Console.WriteLine(String.Join(" ",array));
 Console.WriteLine();
-PrintArray(array, 20);
+PrintIntArray(array, 10, 10);
 
 //=========== find the random element "lost"
 lost = new Random().Next(0, _randomSize);
@@ -62,12 +62,12 @@ Console.WriteLine("press enter when ready..."); Console.ReadLine();
 
 //==================== implementation
 
-void PrintArray(int[] set, int columns){
+//=====================================================
+void PrintIntArray(int[] set, int row, int columns){
 
     int size = set.Length;
     int index = 0;
-     
-    int row = 0;
+
     int cols;
 
     while( index < size){
