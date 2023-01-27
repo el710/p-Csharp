@@ -21,4 +21,9 @@ Console.WriteLine($"string variable stringVar = {stringVar} in any text");
 Console.WriteLine($"integer variable intVar = {intVar} in [{0x0} .. {0xFFFFFFFF}]");
 Console.WriteLine($"double variable doubleVar = {doubleVar}");
 
+var onTimeType = 145.346;
+Console.WriteLine($"onTimeType: {onTimeType.GetType()} ( {onTimeType.GetType().Name} )"); 
+
+
+
 Console.WriteLine("press enter when ready..."); Console.ReadLine();

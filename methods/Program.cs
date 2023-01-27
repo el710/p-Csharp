@@ -5,7 +5,17 @@ Console.Clear();
 Console.WriteLine("Using of methods...");
 
 
-//------------------- recursive 
+//--------- C# syntax
+var IsEven = (double value) => value % 2 == 0;
+
+double realNumber = 45;
+
+if(IsEven(realNumber)) Console.WriteLine($" even ");
+else Console.WriteLine($" odd ");
+
+
+
+/*/------------------- recursive 
 for(int i = 0; i < 10; i++){
     Console.WriteLine($"Factorial {i} = {Factorial(i)}");
 }
