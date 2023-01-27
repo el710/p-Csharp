@@ -46,7 +46,7 @@ if(length > 0){
     Console.WriteLine($"Difference between Max({array38[length-1]}) & Min({array38[0]}) items  = {GetDiffMAxMin(array38)} ");
   
 }
-Console.WriteLine("Task 36: done. Press anykey to continue..."); Console.ReadLine();
+Console.WriteLine("Task 36: done. Press enter to continue..."); Console.ReadLine();
 
 
 //=====================================================
@@ -62,7 +62,7 @@ void PrintRealArray(double[] set, int fromRow, int columns){
         else cols = size - index;
 
         for(int j = 0; j < cols; j++){
-            Console.SetCursorPosition(7+(j*5), 1+fromRow);
+            Console.SetCursorPosition(7+(j*7), 1+fromRow);
             Console.Write($" {set[index]} ");
             index++;
         }    
@@ -73,8 +73,13 @@ void PrintRealArray(double[] set, int fromRow, int columns){
 
 //====================================================
 void InitRealArray(double[] set, int randMin, int randMaх){
+    int baseNumber = 0;
+    double realNumber = 0.0;
     for(int i = 0; i < set.Length; i++){
-        set[i] = new Random().NextDouble(); //(randMin,randMaх + 1);
+        baseNumber = new Random().Next(randMin, randMaх + 1);
+        realNumber = new Random().NextDouble();
+        realNumber = Math.Round(realNumber, 3, MidpointRounding.ToEven);
+        set[i] = baseNumber + realNumber; //(randMin,randMaх + 1);
     }
 }
 

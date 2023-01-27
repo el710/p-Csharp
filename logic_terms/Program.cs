@@ -21,3 +21,8 @@ else if(!boolVar){
 }
 
 Console.WriteLine("press enter when ready..."); Console.ReadLine();
+
+int a = 5;
+int b = 10;
+
+int sum = a<b ? a:b;

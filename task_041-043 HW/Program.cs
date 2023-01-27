@@ -36,7 +36,6 @@ double[] GetCrossPoint(double[] lineSet1, double[] lineSet2){
     return point;
 }
 
-
 //=====================================
 double[] DefineLine(){
     double userNumber = 0.0;
@@ -112,7 +111,6 @@ int[] InitArray(int size){
         } else return set;    
     }
 }
-
 
 //====================================================
 bool GetUserIntNumber(ref int result, string query){

@@ -1,4 +1,134 @@
-﻿
+﻿/* Shablon
+//------------------------ task .
+Console.Clear();
+Console.WriteLine("task : ");
+
+
+Console.WriteLine("task done");
+/**/
+//------------------------------------------------------------
+
+
+
+
+
+/*/------------------------ task 51: Find sum of main diagonal
+Console.Clear();
+Console.WriteLine("task 51: Find sum of main diagonal ");
+int userRows = 0;
+int userCols = 0;
+if(!GetUserIntNumber(ref userRows, "input number of rows")) return;
+if(!GetUserIntNumber(ref userCols, "input number of columns")) return;
+
+int[,] matrix = InitInt2DArray(userRows, userCols, 0, 100);
+PrintInt2DArray(matrix);
+Console.WriteLine($"Sum of main diagonal = {SumOfDiagonal(matrix)}");
+
+Console.WriteLine("task 51 done");
+/**/
+int SumOfDiagonal(int[,] matrix){
+    int sum = 0;
+    //int length = (matrix.GetLength(0) < matrix.GetLength(1)) ? matrix.GetLength(0) : matrix.GetLength(1);
+    int length = Math.Min(matrix.GetLength(0), matrix.GetLength(1));
+    Console.Write("( ");
+    
+    for(int i = 0; i < length; i++){
+        sum += matrix[i, i];
+        Console.Write($"{matrix[i, i]} ");
+        if(i < length-1 ) Console.Write($"+ ");
+   }
+    Console.Write(") ");
+    return sum;
+}
+
+/*/------------------------ task 49: Convert odd elements to power 2
+Console.Clear();
+Console.WriteLine("task 49: Convert odd elements to power 2");
+int userRows = 0;
+int userCols = 0;
+if(!GetUserIntNumber(ref userRows, "input number of rows")) return;
+if(!GetUserIntNumber(ref userCols, "input number of columns")) return;
+
+int[,] matrix = InitInt2DArray(userRows, userCols, 0, 10);
+PrintInt2DArray(matrix);
+Console.WriteLine("---------------");
+ConvertOddPower2(matrix);
+PrintInt2DArray(matrix);
+
+Console.WriteLine("task 49 done");
+/**/
+
+void ConvertOddPower2(int[,] matrix){
+    var IsOdd = (int value) => (value % 2) != 0;
+
+     for(int i = 0; i < matrix.GetLength(0); i++){
+        for(int j = 0; j < matrix.GetLength(1); j++){
+            if(IsOdd(i) && IsOdd(j)){
+                matrix[i, j] *= matrix[i, j];
+            }
+        }
+    }   
+}
+
+/*/------------------------ task 48 : Init 2d matrix with element = i+j
+Console.Clear();
+Console.WriteLine("Task 48: Init 2d matrix with element = i+j");
+int userRows = 0;
+int userCols = 0;
+if(!GetUserIntNumber(ref userRows, "input number of rows")) return;
+if(!GetUserIntNumber(ref userCols, "input number of columns")) return;
+
+int[,] matrix = Fill2DArray(userRows, userCols);
+PrintInt2DArray(matrix);
+
+Console.WriteLine("Task 48: done");
+
+/**/
+int[,] Fill2DArray(int rows, int cols){
+    int[,] matrix = new int[rows, cols];
+    for(int i = 0; i < matrix.GetLength(0); i++){
+        for(int j =0; j < matrix.GetLength(1); j++){
+            matrix[i, j] = i + j;
+        }
+    }
+    return matrix;
+}
+
+/*/------------------------ task 46: initialization of 2d matrix
+Console.Clear();
+Console.WriteLine("Task 46 : initialization oа 2d matrix");
+
+int userRows = 0;
+int userCols = 0;
+if(!GetUserIntNumber(ref userRows, "input number of rows")) return;
+if(!GetUserIntNumber(ref userCols, "input number of columns")) return;
+
+int[,] matrix = InitInt2DArray(userRows, userCols, 0, 10);
+PrintInt2DArray(matrix);
+
+Console.WriteLine("Task 46 done. press enter to continue..."); Console.ReadLine();
+/**/
+
+void PrintInt2DArray(int[,] matrix){
+    for(int i = 0; i < matrix.GetLength(0); i++){
+        for(int j = 0; j < matrix.GetLength(1); j++){
+            Console.Write($"{matrix[i, j]}  ");
+        }
+        Console.WriteLine();
+    } 
+}
+
+int[,] InitInt2DArray(int rows, int cols, int randMin, int randMax){
+    int[,] matrix = new int[rows, cols];
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            matrix[i, j] = new Random().Next(randMin, randMax + 1);
+        }
+    }
+    return matrix;
+}
+
+
 /*/---------------------- task 44: Show N Fibonachi line
 int userNumber = 0;
 
@@ -16,11 +146,11 @@ Console.WriteLine();
 Console.WriteLine("Task 44:  done");
 
 /**/
+
 int Fibonacci(int item){
     if(item <= 2 ) return 1;
     return Fibonacci(item - 1) + Fibonacci(item - 2);
 }
-
 
 int ShowFibonachi(int number){
 
@@ -47,8 +177,6 @@ int ShowFibonachi(int number){
     return 0;
 }
 
-
-
 /*/-------------------- task 42: Convert user's integer to binary
 int userNumber = 0;
 
@@ -61,6 +189,7 @@ Console.WriteLine($"{userNumber} in binary: {IntToStrBin(userNumber)}");
 Console.WriteLine("Task 42:  done");
 
 /**/
+
 string IntToStrBin(int number){
 
     string result = String.Empty;
@@ -75,7 +204,6 @@ string IntToStrBin(int number){
     }
     return result;
 }
-
 
 /*/----------------- task 40: 
 int sideA = 0, sideB = 0, sideC = 0;
@@ -109,7 +237,7 @@ bool IsTriangle(int[] array){
 }
 
 
-//----------------------- task 37
+/*/----------------------- task 37
 Console.Clear();
 Console.WriteLine("Task 37: Get prodact of items pairs in array");
 int[] array = InitIntArray(10, 0, 10);
@@ -131,7 +259,6 @@ void ShowSymProdact(int[] set){
     Console.WriteLine();
 }
 
-
 /*/----------------------- task 35
 Console.Clear();
 Console.WriteLine("Task 35: Find set in array");
@@ -144,6 +271,7 @@ Console.WriteLine($"There are {setCount} numbers of [10, 99] in array");
 PrintIntArray(array, 2, 10);
 
 Console.WriteLine("Task 35: done");
+
 /**/
 
 int FindQuontityOfSet(int[] set, int min, int max){
@@ -179,7 +307,7 @@ Console.WriteLine("Task 33: done");
 
 bool IsNumberInArray(int[] set, int lookNumber){
 
-    foreach(int item in array){
+    foreach(int item in set){
         if(item == lookNumber) return true;
     }
     return false;
@@ -190,13 +318,13 @@ Console.Clear();
 Console.WriteLine("Task 32: Convert positive and negative in array");
 int[] array = InitIntArray(20,-10, 10);
 PrintIntArrayLine(array);
-ConverPlusMinus(array);
+ChangePlusMinus(array);
 PrintIntArrayLine(array);
 
 Console.WriteLine("Task 32: done");
 /**/
 
-void ConverPlusMinus(int[] set){
+void ChangePlusMinus(int[] set){
     for(int i = 0; i<set.Length; i++){
         set[i] *= -1;
     }
@@ -206,8 +334,8 @@ void PrintIntArrayLine(int[] set){
 
     Console.Write("array[ ");
     for(int i = 0; i < set.Length; i++){
-        Console.Write($"{array[i]}");
-        if(i<array.Length-1) Console.Write(", ");
+        Console.Write($"{set[i]}");
+        if(i<set.Length-1) Console.Write(", ");
     }
     Console.WriteLine(" ]");
 }
@@ -270,7 +398,6 @@ int[] InitIntArray(int size, int min, int max){
     return set;
 }
 
-
 /*/----------------- task 30: initialisation of array by [0,1]
 
 int[] mas = new int[8];
@@ -293,7 +420,6 @@ void InitArray(ref int [] array){
     Console.WriteLine(" ]");
 }
 
-
 /*/--------------- task 28: Factorial
 int userNumber = 0;
 
@@ -311,7 +437,6 @@ int GetFactorial(int number){
 
     return result;
 }
-
 
 /*/--------------- task 26: count of digit in number
 int userNumber = 0;
@@ -344,7 +469,7 @@ if(! GetUserIntNumber(ref userNumber,"input integer number ")) return;
 Console.WriteLine($" Sum from 1 to {userNumber} = {GetSequenceSum(userNumber)}");
 Console.WriteLine("Task 24: has done.");
 
-/*/
+/**/
 int GetSequenceSum (int limit){
     int sum = 0;
     for(int i = 1; i <= limit; i++) sum += i;
