@@ -1,5 +1,5 @@
 ﻿/* Shablon
-//------------------------ task .
+//------------------------ 
 Console.Clear();
 Console.WriteLine("task : ");
 
@@ -10,6 +10,123 @@ Console.WriteLine("task done");
 
 
 
+
+/*/------------------------ task 57: make list of item's repetition
+Console.Clear();
+Console.WriteLine("task 57: make list of item's repetition");
+
+Console.WriteLine("You should default matrix");
+int userRows = 0;
+int userCols = 0;
+if(!GetUserIntNumber(ref userRows, "input number of rows")) return;
+if(!GetUserIntNumber(ref userCols, "input number of columns")) return;
+int[,] matrix = InitInt2DArray(userRows, userCols, 0, 10);
+
+PrintInt2DArray(matrix);
+GetItemRepetition(matrix);
+
+Console.WriteLine("task 57 done");
+/**/
+void GetItemRepetition(int[,] matrix){
+    int[] itemList = new int[matrix.GetLength(0) * matrix.GetLength(1)];
+    int[] repeatList = new int[matrix.GetLength(0) * matrix.GetLength(1)];
+    int length = 0;
+    int index = 0;
+
+    for(int i = 0; i < matrix.GetLength(0); i++){
+        for(int j = 0; j < matrix.GetLength(1); j++){
+            if(!ItemExists(itemList, matrix[i, j], out index)){
+                itemList[length] = matrix[i,j];
+                repeatList[length] = 1;
+                length++;
+            }
+            else{
+                repeatList[index]++;
+                if(matrix[i, j] == 0 && index == length) length++;
+            }
+        
+        }
+
+    }
+    // PrintIntArrayLine(itemList);
+    // PrintIntArrayLine(repeatList);
+    // Console.WriteLine($"Uniq items: {length}");
+    for(int i = 0; i < length; i++){
+        Console.WriteLine($"{itemList[i]} founded {repeatList[i]} times");
+    }
+}
+
+bool ItemExists(int[] set, int number, out int index){
+
+    for(int i = 0; i < set.Length; i++){
+        if(set[i] == number){
+            index = i;
+            return true;
+        }
+    }
+    index = 0;
+    return false;
+}
+
+
+/*/------------------------ task 55: Make transposition of matrix 
+Console.Clear();
+Console.WriteLine("task 55: Make transposition of matrix ");
+
+int userRows = 0;
+int userCols = 0;
+if(!GetUserIntNumber(ref userRows, "input number of rows")) return;
+if(!GetUserIntNumber(ref userCols, "input number of columns")) return;
+
+int[,] matrix = InitInt2DArray(userRows, userCols, 0, 100);
+PrintInt2DArray(matrix);
+Console.WriteLine();
+Console.WriteLine("Transposition of matrix:");
+int[,] transMatrix = Transposition2DArray(matrix);
+PrintInt2DArray(transMatrix);
+
+Console.WriteLine("task done");
+/**/
+int[,] Transposition2DArray(int[,] matrix){
+    int[,] array = new int[matrix.GetLength(1), matrix.GetLength(0)];
+
+    if(matrix.GetLength(1) != matrix.GetLength(0))
+        Console.WriteLine("Non square matrix was rotate");
+
+    for(int i = 0; i < matrix.GetLength(0); i++){
+        for(int j = 0; j < matrix.GetLength(1); j++){
+            array[j,i] = matrix[i,j];
+        }
+    }    
+
+    return array;
+}
+
+
+/*/------------------------ task 53: swap rows in array
+Console.Clear();
+Console.WriteLine("task 53: swap rows in array");
+
+int[,] matrix = InitInt2DArray(5, 5, 0, 50);
+PrintInt2DArray(matrix);
+Console.WriteLine();
+Console.WriteLine("First & last was swaped");
+SwapRows(matrix, 0, matrix.GetLength(0)-1);
+PrintInt2DArray(matrix);
+
+Console.WriteLine("task 53 done");
+/**/
+void SwapRows(int[,] matrix, int firstRow, int secondRow){
+    //int buffer = 0;
+    for(int i = 0; i < matrix.GetLength(1); i++){
+        //buffer = matrix[firstRow, i];
+        //matrix[firstRow, i] = matrix[secondRow, i];
+        //matrix[secondRow, i] = buffer;
+        //==== cortage
+        (matrix[firstRow, i], matrix[secondRow, i]) = (matrix[secondRow, i], matrix[firstRow, i]);
+    }
+
+}
 
 
 /*/------------------------ task 51: Find sum of main diagonal
@@ -285,7 +402,7 @@ int FindQuontityOfSet(int[] set, int min, int max){
     return sum;
 }
 
-/*/----------------------- task 33
+/*/----------------------- task 33 : Find item in array
 Console.Clear();
 Console.WriteLine("Task 33: Find item in array");
 int[] array = InitIntArray(20,-100, 100);
@@ -304,11 +421,12 @@ PrintIntArrayLine(array);
 
 Console.WriteLine("Task 33: done");
 /**/
-
 bool IsNumberInArray(int[] set, int lookNumber){
 
     foreach(int item in set){
-        if(item == lookNumber) return true;
+        if(item == lookNumber){
+            return true;
+        }
     }
     return false;
 }
@@ -323,7 +441,6 @@ PrintIntArrayLine(array);
 
 Console.WriteLine("Task 32: done");
 /**/
-
 void ChangePlusMinus(int[] set){
     for(int i = 0; i<set.Length; i++){
         set[i] *= -1;
