@@ -8,8 +8,66 @@ Console.WriteLine("task done");
 /**/
 //------------------------------------------------------------
 
+//------------------------ task 69: get recursive power of number
+Console.Clear();
+Console.WriteLine("task 69: get recursive power of number");
+
+int userNumber = 0;
+if(!GetUserIntNumber(ref userNumber, "input integer number")) return;
+int userPower = 0;
+if(!GetUserIntNumber(ref userPower, "input number of power")) return;
+
+Console.WriteLine($"{userNumber} in {userPower} = {GetPower(userNumber,userPower)}");
+
+Console.WriteLine("task 69 done");
+/**/
+int GetPower(int number, int power){
+    int result = 1;
+
+    if(power != 0) result = number * GetPower(number, power - 1);
+     
+    return result;
+}
 
 
+/*/------------------------ task 67: get recursive sum of number's digits
+Console.Clear();
+Console.WriteLine("task 67: get recursive sum of number's digits");
+
+int userNumber = 0;
+if(!GetUserIntNumber(ref userNumber, "input integer number")) return;
+
+Console.WriteLine($"Sum of digits {userNumber} = {GetSum(userNumber)}");
+
+Console.WriteLine("task 67 done");
+/**/
+int GetSum(int number){
+    
+    if(number != 0) return (number % 10) + GetSum(number / 10);
+    else return 0;
+}
+
+/*/------------------------ 
+Console.Clear();
+Console.WriteLine("task 63-65: ");
+
+int startNumber = 0;
+int endNumber = 0;
+if(!GetUserIntNumber(ref startNumber, "input start number")) return;
+if(!GetUserIntNumber(ref endNumber, "input end number")) return;
+
+ShowLine(startNumber, endNumber);
+
+Console.WriteLine("task done");
+/**/
+void ShowLine(int startNumber, int endNumber){
+        Console.Write($"{startNumber}");
+        if(startNumber != endNumber){
+           Console.Write(", "); 
+           ShowLine(startNumber + 1, endNumber);
+        } 
+        else Console.WriteLine(""); 
+}
 
 /*/------------------------ task 57: make list of item's repetition
 Console.Clear();
