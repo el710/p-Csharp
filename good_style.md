@@ -50,3 +50,20 @@ Design guidlines: https://docs.microsoft.com/en-us/dotnet/standart/design-guidel
 >~~some code~~
 >i = 123;
 
+## Think about code features:
+- flexible
+- expandable
+- modular
+- supported
+- documented
+
+
+## DRY - Don't Repeat Yourself
+do not use copy-paste code
+
+## YAGNI - You aren't gonna need it
+do not do what you wasn't asked or you don't need
+
+## KISS - Keep It Simple, Stupid
+do not make rocket if you need bike
+
