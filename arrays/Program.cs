@@ -1,4 +1,6 @@
-﻿// work with array
+﻿using System.Linq;
+
+// work with array
 
 Console.WriteLine("There are examples with arrays");
 
@@ -11,17 +13,23 @@ Console.WriteLine("There are examples with arrays");
 // int[,] array2D = new int[5, 5]
 
 
+// Example: ---------- String is array
 
-// -------------- multi dimension arrays
+string text = "(1,2) (2,3) (3,5) (5,6) (6,7)";
+
+var data = text.Split(" ").ToArray();
+
+
+/*/ Example: -------------- multi dimension arrays
 int[,] matrix = new int[3, 4]; 
 
 Console.Clear();
 Console.WriteLine("2D array - matrix");
 FillMatrix(matrix);
 ShowMatrix(matrix);
-
-
 /**/
+
+//=====================================================
 void FillMatrix(int[,] matr){
     for(int i = 0; i < matr.GetLength(0); i++){
         for(int j = 0; j < matr.GetLength(1); j++){
@@ -30,6 +38,7 @@ void FillMatrix(int[,] matr){
     }
 }
 
+//=====================================================
 void ShowMatrix(int[,] matr){
     for(int i = 0; i < matr.GetLength(0); i++){
         for(int j = 0; j < matr.GetLength(1); j++){
@@ -39,8 +48,7 @@ void ShowMatrix(int[,] matr){
     }
 }
 
-
-/*/---------------  initialisation and show array
+/*/ Example: ---------------  initialisation and show array
 const int _arraySize = 100;
 const int _randomSize = 100;
 
@@ -59,8 +67,6 @@ if(result != -1) Console.WriteLine($"We find {lost} in array[{result}] ");
 else Console.WriteLine($"There is no {lost} in array ");
 Console.WriteLine("press enter when ready..."); Console.ReadLine();
 /**/
-
-//==================== implementation
 
 //=====================================================
 void PrintIntArray(int[] set, int row, int columns){
@@ -84,6 +90,7 @@ void PrintIntArray(int[] set, int row, int columns){
     Console.WriteLine("");
 }
 
+//=====================================================
 void InitArray(int[] set, int rand){
 
     int index = 0;
@@ -95,6 +102,7 @@ void InitArray(int[] set, int rand){
     Console.WriteLine("");
 }
 
+//=====================================================
 int IndexOf(int[] set, int seek){
     int size = set.Length;
     int index = 0;
