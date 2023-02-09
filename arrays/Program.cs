@@ -17,8 +17,49 @@ Console.WriteLine("There are examples with arrays");
 
 string text = "(1,2) (2,3) (3,5) (5,6) (6,7)";
 
-var data = text.Split(" ").ToArray();
+var data = text.Split(" ").ToArray(); // make array of some data from string devided by space " "
+// view data
+Console.WriteLine($"from string {text} make array: ");
+for (int i = 0; i < data.Length; i++) Console.WriteLine(data[i]);
+Console.WriteLine("press enter ..."); Console.ReadLine();
 
+// replace some char in input string
+text = "(1,2) (2,3) (3,4) (4,5) (5,6) (6,7)"
+        .Replace("(", "" )
+        .Replace(")", "")
+        ;
+
+data = text.Split(" ").ToArray(); // make array of some data from string devided by space " "
+// view data
+Console.WriteLine($"from string{text} make array: ");
+for (int i = 0; i < data.Length; i++) Console.WriteLine(data[i]);
+Console.WriteLine("press enter ..."); Console.ReadLine();
+
+var data1 = text.Split(" ")
+            .Select(item => item.Split(",")) // also split every item by ","
+            .ToArray();
+// view data
+Console.WriteLine($" now we get 2 division array: ");
+for (int i = 0; i < data.Length; i++){
+    for (int j = 0; j < data1[i].Length; j++){
+        Console.WriteLine(data1[i][j]);
+    }
+    Console.Write("-");
+}
+Console.WriteLine("press enter ..."); Console.ReadLine();
+
+var data2 = text.Split(" ")
+            .Select(a => a.Split(",")) // select(make) item as two members item split by ","
+            .Select(b => (x: int.Parse(b[0]), y: int.Parse(b[1]))) // make each item as cortage of integer numbers (x, y)
+            .Where(c => c.x % 2 == 0) // take only even items
+            .Select(d => (d.x * 10, d.y)) // increase x in cortage on 10 times
+            .ToArray();
+// view data
+Console.WriteLine($" now we get array of two integer numbers cortage - not string anymore: ");
+for (int i = 0; i < data2.Length; i++){
+    Console.WriteLine($"{data2[i]}: ");
+}
+Console.WriteLine("press enter ..."); Console.ReadLine();
 
 /*/ Example: -------------- multi dimension arrays
 int[,] matrix = new int[3, 4]; 
@@ -30,6 +71,10 @@ ShowMatrix(matrix);
 /**/
 
 //=====================================================
+/// <summary>
+/// Make matrix with random means
+/// </summary>
+/// <param name="matr"> array</param>
 void FillMatrix(int[,] matr){
     for(int i = 0; i < matr.GetLength(0); i++){
         for(int j = 0; j < matr.GetLength(1); j++){
@@ -37,7 +82,6 @@ void FillMatrix(int[,] matr){
         }
     }
 }
-
 //=====================================================
 void ShowMatrix(int[,] matr){
     for(int i = 0; i < matr.GetLength(0); i++){
@@ -89,7 +133,6 @@ void PrintIntArray(int[] set, int row, int columns){
     }
     Console.WriteLine("");
 }
-
 //=====================================================
 void InitArray(int[] set, int rand){
 
@@ -101,7 +144,6 @@ void InitArray(int[] set, int rand){
     }
     Console.WriteLine("");
 }
-
 //=====================================================
 int IndexOf(int[] set, int seek){
     int size = set.Length;

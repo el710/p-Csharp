@@ -4,16 +4,18 @@
 Console.Clear();
 Console.WriteLine("Using of methods...");
 
+//-------------------- 
 
-//--------- C# syntax
+/**/
+
+/*/------------------- C# syntax
 var IsEven = (double value) => value % 2 == 0;
 
 double realNumber = 45;
 
 if(IsEven(realNumber)) Console.WriteLine($" even ");
 else Console.WriteLine($" odd ");
-
-
+/**/
 
 /*/------------------- recursive 
 for(int i = 0; i < 10; i++){
@@ -37,7 +39,7 @@ void BackParam(int intIn, out int intOut){
 }
 /**/
 
-/*/------------------ using reference as parameter
+/*/------------------- using reference as parameter
 int intVar = 0, count = 0;
 init(ref intVar, ref count); // give referances if variables - method can change variables
 Console.WriteLine($"var & count become {intVar} - {count}");
@@ -51,7 +53,7 @@ void init(ref int x, ref int y){
 }
 /**/
 
-/*/------------------ returning method
+/*/------------------- returning method
 int[] array1 = {234, 546, 678};
 Console.WriteLine($"Method with returned value: max of 1, 2, 3 is {find_max(array1[0],array1[1],array1[2])}");
 
@@ -64,7 +66,7 @@ int find_max(int x, int y, int z){
 }
 /**/
 
-/*/----------------- set paramaters in random order
+/*/------------------- set paramaters in random order
 Method3(number: 10, msg: "second parameter"); 
 
 void Method3(string msg, int number){
@@ -72,7 +74,7 @@ void Method3(string msg, int number){
 }
 /**/
 
-/*/-------------- with parameter
+/*/------------------- with parameter
 Method2("Hello Method2");
 
 void Method2(string msg){
@@ -80,7 +82,7 @@ void Method2(string msg){
 }
 /**/
 
-/*/------------- simple
+/*/------------------- simple
 Method1();
 
 void Method1(){

@@ -67,3 +67,24 @@ do not do what you wasn't asked or you don't need
 ## KISS - Keep It Simple, Stupid
 do not make rocket if you need bike
 
+## Comments
+code must be readable without comments
+
+## Easy for code
+- little method/ class/ object e.t.c is good
+- more methods
+- less cycles and "if"s
+- easy for testing
+- checkout user's data
+- checkout for easier
+
+## More...
+- use SOLID
+    * Single responsibility (one functionality to one object)
+    * Open-close (open for new functionality, close for modification)
+    * Liskov substitution (object-descendant should have the same(or same type of) functionality as parent)
+    * Interface segregation ( don't make object to do that what it doesn't create for(or it doesn't need))
+    * Dependancy inversion ()
+- don't use antipatterns
+- use patterns
+- lean to Code Convention
